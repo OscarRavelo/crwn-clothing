@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import  PreviewCollection from '../preview-collection/preview-collection.component';
 
 const collectionsOverview = ({collections}) => {
-  console.log('collections', collections);
   return(
     <div className="collections-overview">
     {collections.map(({id, ...otherProps}) => (
