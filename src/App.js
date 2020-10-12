@@ -11,7 +11,6 @@ import { setCurrentUser } from "./redux/user/user.actions";
 import SignInAndSignUp from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import CheckOut from "./pages/checkout/checkout.component";
-
 class App extends React.Component {
   unSubscribeFromAuth = null;
 
@@ -29,6 +28,7 @@ class App extends React.Component {
         });
       } else {
         setCurrentUser(userAuth);
+        
       }
     });
   }
@@ -43,7 +43,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/checkout" component={CheckOut} />
           <Route exact path="/" component={HomePage} />
-          <Route  path="/shop" component={ShopPage} />
+          <Route path="/shop" component={ShopPage} />
           <Route
             exact
             path="/signIn"

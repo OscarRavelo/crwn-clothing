@@ -4,7 +4,9 @@ import { selectCollectionsForPreview } from '../../redux/shopdata/shop.data.sele
 import { connect } from "react-redux";
 import  PreviewCollection from '../preview-collection/preview-collection.component';
 
-const collectionsOverview = ({collections}) => (
+const collectionsOverview = ({collections}) => {
+  console.log('collections', collections);
+  return(
     <div className="collections-overview">
     {collections.map(({id, ...otherProps}) => (
       <PreviewCollection
@@ -13,6 +15,7 @@ const collectionsOverview = ({collections}) => (
     ))}
   </div>
 );
+}
 
 
 const MapStateToProps = state => ({
